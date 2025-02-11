@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Emotion Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container" class="auth-container">
+        <div class="auth-box">
+            <h1>Login</h1>
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Sign In</button>
+            </form>
+            <p class="auth-info">Demo credentials: demo / demo123</p>
+        </div>
+    </div>
+
+    <div id="app-container" class="container hidden">
+        <header>
+            <div class="header-content">
+                <h1>Twitter Emotion Analyzer</h1>
+                <p>Analyze emotions and sentiments in tweets</p>
+                <button id="logout-btn" class="logout-button">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="analysis-section">
+                <div class="tweet-input-section">
+                    <div class="tweet-box">
+                        <textarea 
+                            id="tweet-input" 
+                            placeholder="Enter a tweet to analyze..."
+                            maxlength="280"
+                        ></textarea>
+                        <div class="tweet-controls">
+                            <span id="char-count">280</span>
+                            <button id="analyze-btn">Analyze Tweet</button>
+                        </div>
+                    </div>
+                    
+                    <div class="emotion-panel">
+                        <h2>Emotion Analysis</h2>
+                        <div class="emotion-grid">
+                            <div class="emotion-card" id="happy">
+                                <span class="emotion-icon">😊</span>
+                                <span class="emotion-label">Happy</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                            <div class="emotion-card" id="angry">
+                                <span class="emotion-icon">😠</span>
+                                <span class="emotion-label">Angry</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                            <div class="emotion-card" id="sad">
+                                <span class="emotion-icon">😢</span>
+                                <span class="emotion-label">Sad</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                            <div class="emotion-card" id="scared">
+                                <span class="emotion-icon">😨</span>
+                                <span class="emotion-label">Scared</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                            <div class="emotion-card" id="love">
+                                <span class="emotion-icon">🥰</span>
+                                <span class="emotion-label">Love</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                            <div class="emotion-card" id="surprise">
+                                <span class="emotion-icon">😲</span>
+                                <span class="emotion-label">Surprise</span>
+                                <span class="emotion-score">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-section">
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        <h2>EmotiBot</h2>
+                        <p>Your emotional support assistant</p>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot">
+                            <div class="message-content">
+                                Hello! I'm here to help you understand your emotions. Share your thoughts, and I'll provide support and insights.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
